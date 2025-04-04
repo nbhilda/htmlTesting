@@ -1,5 +1,12 @@
 name: First practice HTML
-on: push
+on:
+    workflow_dispatch:
+        inputs:
+            content:
+                description: 'Enter the content for the HTML file'
+                required: true
+                default: 'World'
+            
 jobs: 
     Explore-HTML:
         runs-on: ubuntu-latest
