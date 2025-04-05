@@ -1,15 +1,19 @@
 name: First practice HTML
 on:
+    push:
+        branches:
+            - master
     workflow_dispatch:
         inputs:
             content:
                 description: 'Enter the content for the HTML file'
                 required: true
                 default: 'World'
-            
+                
 jobs: 
     Explore-HTML:
         runs-on: ubuntu-latest
         steps: 
             - name: Checkout code
               uses: actions/checkout@v2 
+
