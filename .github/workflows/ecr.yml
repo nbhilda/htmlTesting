@@ -5,10 +5,10 @@ on:
       - bihbranch
   workflow_dispatch:
     inputs:
-      content:
-        description: 'Enter the content for ECR file'
+      image_tag:
+        description: 'image tag to deploy'
         required: true
-        default: 'World'
+        default: 'latest'
         
 #AWS ECR Setup        
 jobs:
