@@ -25,6 +25,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: us-east-1
 
+          
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -33,10 +34,11 @@ jobs:
           mask-password: 'false'
     
 
+
       - name: Build image to Amazon ECR
         id: build-image
         run: |
-          docker build -t ecr-repo:latest
+          docker build -t ecr-repo:latest .
           docker tag ecr-repo:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/ecr-repo:v1
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/ecr-repo:v1
  
