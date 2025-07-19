@@ -2,7 +2,7 @@ name: Terraform AWS ECR Setup
 on:
   push:
     branches:
-      - master
+      - bihbranch
   workflow_dispatch:
     inputs:
       content:
@@ -32,7 +32,7 @@ jobs:
         with:
           mask-password: 'false'
     
-          
+
       - name: Build image to Amazon ECR
         id: build-image
         run: |
